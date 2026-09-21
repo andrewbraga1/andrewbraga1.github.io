@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Rodrigues | Software Engineer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="antialiased bg-white dark:bg-[#0a0a0a] text-zinc-900 dark:text-[#ededed] transition-colors duration-300">
+
+    <div class="max-w-3xl mx-auto px-6 py-12 md:py-20">
+        
+        <!-- Header Controls (Lang & Theme) -->
+        <div class="flex justify-end items-center gap-4 mb-8 text-sm">
+            <div class="flex gap-2">
+                <button id="btn-en" onclick="setLanguage('en')" class="hover:text-zinc-600 dark:hover:text-white transition-opacity font-bold">EN</button>
+                <span class="text-zinc-300 dark:text-zinc-700">|</span>
+                <button id="btn-pt" onclick="setLanguage('pt')" class="hover:text-zinc-600 dark:hover:text-white transition-opacity opacity-50">PT</button>
+            </div>
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors" title="Toggle Theme">
+                <!-- Sun icon (shows in dark mode) -->
+                <svg class="w-4 h-4 text-zinc-600 dark:text-zinc-400 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                <!-- Moon icon (shows in light mode) -->
+                <svg class="w-4 h-4 text-zinc-600 dark:text-zinc-400 block dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            </button>
+        </div>
+
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-24 gap-6">
+            <div>
+                <h1 class="text-3xl font-semibold tracking-tight">Andrew Rodrigues</h1>
+                <p data-i18n="role" class="text-zinc-500 dark:text-[#888888] mt-1 text-sm">Senior Full Stack Engineer</p>
+            </div>
+            <div class="flex gap-4">
+                <a href="mailto:andrewbraga1@gmail.com" class="text-zinc-400 hover:text-zinc-900 dark:text-[#888888] dark:hover:text-white transition-colors" title="Email">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </a>
+                <a href="https://linkedin.com/in/andrew-braga-rodrigues/" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-zinc-900 dark:text-[#888888] dark:hover:text-white transition-colors" title="LinkedIn">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="https://github.com/andrewbraga1" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-zinc-900 dark:text-[#888888] dark:hover:text-white transition-colors" title="GitHub">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                </a>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="mb-24">
+            <h2 data-i18n="hero_title" class="text-4xl md:text-5xl font-medium tracking-tight leading-tight mb-6">
+                Architecting high-availability platforms <br class="hidden md:block text-zinc-400 dark:text-[#888888]">
+                <span class="text-zinc-500 dark:text-[#888888]">& scalable backend solutions.</span>
+            </h2>
+            <p data-i18n="hero_desc" class="text-zinc-600 dark:text-[#888888] leading-relaxed max-w-2xl text-lg">
+                I am a Senior Full Stack Engineer specializing in Ruby on Rails, React.js, and CI/CD automation. I deliver mission-critical systems with up to 90% performance gains.
+            </p>
+        </section>
+
+        <!-- About -->
+        <section class="mb-24">
+            <h3 data-i18n="about_title" class="text-sm font-semibold tracking-wider text-zinc-400 dark:text-[#888888] uppercase mb-6">About</h3>
+            <p data-i18n="about_text" class="text-zinc-800 dark:text-[#ededed] leading-relaxed">
+                With over 6 years as a Full Stack Engineer (8 years in IT), I manage the entire Software Development Life Cycle. I focus on creating business value through technical excellence, clean service decoupling, and optimizing complex data workflows. I thrive in complex engineering environments, ensuring reliability for governmental-scale platforms.
+            </p>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="mb-24">
+            <h3 data-i18n="tech_title" class="text-sm font-semibold tracking-wider text-zinc-400 dark:text-[#888888] uppercase mb-6">Tech Stack</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <h4 data-i18n="tech_backend" class="text-sm text-zinc-500 dark:text-[#888888] mb-3">Backend & Cloud</h4>
+                    <ul class="space-y-2 text-sm text-zinc-800 dark:text-zinc-300">
+                        <li>Ruby on Rails</li>
+                        <li>Node.js</li>
+                        <li>Python</li>
+                        <li>AWS</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 data-i18n="tech_frontend" class="text-sm text-zinc-500 dark:text-[#888888] mb-3">Frontend</h4>
+                    <ul class="space-y-2 text-sm text-zinc-800 dark:text-zinc-300">
+                        <li>React.js</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>React Native / Ionic</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 data-i18n="tech_devops" class="text-sm text-zinc-500 dark:text-[#888888] mb-3">DevOps & Data</h4>
+                    <ul class="space-y-2 text-sm text-zinc-800 dark:text-zinc-300">
+                        <li>PostgreSQL</li>
+                        <li>Docker</li>
+                        <li>GitLab CI/CD</li>
+                        <li>Redis & Grafana</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Highlights -->
+        <section class="mb-24">
+            <h3 data-i18n="career_title" class="text-sm font-semibold tracking-wider text-zinc-400 dark:text-[#888888] uppercase mb-6">Career Highlights</h3>
+            <div class="space-y-6">
+                
+                <div class="bg-zinc-50 dark:bg-[#111111] border border-zinc-200 dark:border-[#222222] rounded-lg p-6 hover:border-zinc-300 dark:hover:border-[#444444] transition-colors">
+                    <h4 data-i18n="avia_title" class="font-medium mb-4 text-zinc-900 dark:text-white">Integrated Internal Control System (AVIA)</h4>
+                    <p data-i18n="avia_desc" class="text-sm text-zinc-600 dark:text-[#888888] leading-relaxed mb-4">
+                        I architected the backend using Ruby on Rails and Sidekiq. I successfully reduced report generation and page load times by over 90% (from 109s to under 10s) and sustained 98.4%+ uptime for 1,000+ daily active users.
+                    </p>
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="bg-zinc-200 dark:bg-[#222222] text-zinc-800 dark:text-[#ededed] px-3 py-1 rounded-full text-xs font-medium">Ruby on Rails</span>
+                        <span class="bg-zinc-200 dark:bg-[#222222] text-zinc-800 dark:text-[#ededed] px-3 py-1 rounded-full text-xs font-medium">PostgreSQL</span>
+                        <span class="bg-zinc-200 dark:bg-[#222222] text-zinc-800 dark:text-[#ededed] px-3 py-1 rounded-full text-xs font-medium">Performance</span>
+                    </div>
+                </div>
+
+                <div class="bg-zinc-50 dark:bg-[#111111] border border-zinc-200 dark:border-[#222222] rounded-lg p-6 hover:border-zinc-300 dark:hover:border-[#444444] transition-colors">
+                    <h4 data-i18n="infra_title" class="font-medium mb-4 text-zinc-900 dark:text-white">Infrastructure Modernization & CI/CD</h4>
+                    <p data-i18n="infra_desc" class="text-sm text-zinc-600 dark:text-[#888888] leading-relaxed mb-4">
+                        I led the migration of systems from Ruby 2.7 to 3.2 and Rails 5.0 to 6.1. I also implemented multi-stage CI/CD pipelines using GitLab and AWS, cutting manual server configuration time by 70%.
+                    </p>
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="bg-zinc-200 dark:bg-[#222222] text-zinc-800 dark:text-[#ededed] px-3 py-1 rounded-full text-xs font-medium">AWS</span>
+                        <span class="bg-zinc-200 dark:bg-[#222222] text-zinc-800 dark:text-[#ededed] px-3 py-1 rounded-full text-xs font-medium">GitLab CI/CD</span>
+                        <span class="bg-zinc-200 dark:bg-[#222222] text-zinc-800 dark:text-[#ededed] px-3 py-1 rounded-full text-xs font-medium">DevOps</span>
+                    </div>
+                </div>
+
+                <div class="bg-zinc-50 dark:bg-[#111111] border border-zinc-200 dark:border-[#222222] rounded-lg p-6 hover:border-zinc-300 dark:hover:border-[#444444] transition-colors">
+                    <h4 data-i18n="roi_title" class="font-medium mb-4 text-zinc-900 dark:text-white">High-ROI Automation Workflow</h4>
+                    <p data-i18n="roi_desc" class="text-sm text-zinc-600 dark:text-[#888888] leading-relaxed mb-4">
+                        I engineered advanced automation solutions that reduced labor costs by 68% and task execution time by 83% (shrinking a 3-minute process to under 30 seconds), delivering a 187% ROI.
+                    </p>
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="bg-zinc-200 dark:bg-[#222222] text-zinc-800 dark:text-[#ededed] px-3 py-1 rounded-full text-xs font-medium">Automation</span>
+                        <span class="bg-zinc-200 dark:bg-[#222222] text-zinc-800 dark:text-[#ededed] px-3 py-1 rounded-full text-xs font-medium">Data Workflows</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-zinc-200 dark:border-[#222222] pt-8 flex flex-col items-center md:flex-row md:justify-between text-xs text-zinc-500 dark:text-[#888888] gap-6">
+            <div class="flex flex-col md:flex-row gap-2 md:gap-6 text-center md:text-left">
+                <p data-i18n="footer_rights"></p>
+                <div class="flex justify-center md:justify-start gap-4 mt-2 md:mt-0">
+                    <a href="https://linkedin.com/in/andrew-braga-rodrigues/" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-white transition-colors underline underline-offset-2">LinkedIn</a>
+                    <a href="https://github.com/andrewbraga1/andrewbraga1.github.io" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-white transition-colors underline underline-offset-2" data-i18n="footer_source">Source Code</a>
+                </div>
+            </div>
+            <p data-i18n="footer_design" class="text-center md:text-right">Designed with minimal friction.</p>
+        </footer>
+
+    </div>
+
+    <!-- Scripts for Logic: Theme & i18n -->
+    <script>
+        // 1. Theme Logic (Default Dark)
+        const html = document.documentElement;
+        
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                html.classList.add('dark');
+            } else {
+                html.classList.remove('dark');
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        // Check local storage or default to dark
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        applyTheme(savedTheme);
+
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
+            applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+
+        // 2. i18n (Bilingual Logic + Dynamic Year)
+        const currentYear = new Date().getFullYear();
+        
+        const i18nData = {
+            "en": {
+                "role": "Senior Full Stack Engineer",
+                "hero_title": "Architecting high-availability platforms <br class='hidden md:block text-zinc-400 dark:text-[#888888]'> <span class='text-zinc-500 dark:text-[#888888]'>& scalable backend solutions.</span>",
+                "hero_desc": "I am a Senior Full Stack Engineer specializing in Ruby on Rails, React.js, and CI/CD automation. I deliver mission-critical systems with up to 90% performance gains.",
+                "about_title": "About",
+                "about_text": "With over 6 years as a Full Stack Engineer (8 years in IT), I manage the entire Software Development Life Cycle. I focus on creating business value through technical excellence, clean service decoupling, and optimizing complex data workflows. I thrive in complex engineering environments, ensuring reliability for governmental-scale platforms.",
+                "tech_title": "Tech Stack",
+                "tech_backend": "Backend & Cloud",
+                "tech_frontend": "Frontend",
+                "tech_devops": "DevOps & Data",
+                "career_title": "Career Highlights",
+                "avia_title": "Integrated Internal Control System (AVIA)",
+                "avia_desc": "I architected the backend using Ruby on Rails and Sidekiq. I successfully reduced report generation and page load times by over 90% (from 109s to under 10s) and sustained 98.4%+ uptime for 1,000+ daily active users.",
+                "infra_title": "Infrastructure Modernization & CI/CD",
+                "infra_desc": "I led the migration of systems from Ruby 2.7 to 3.2 and Rails 5.0 to 6.1. I also implemented multi-stage CI/CD pipelines using GitLab and AWS, cutting manual server configuration time by 70%.",
+                "roi_title": "High-ROI Automation Workflow",
+                "roi_desc": "I engineered advanced automation solutions that reduced labor costs by 68% and task execution time by 83% (shrinking a 3-minute process to under 30 seconds), delivering a 187% ROI.",
+                "footer_rights": `&copy; ${currentYear} Andrew Rodrigues. All rights reserved.`,
+                "footer_source": "Source Code",
+                "footer_design": "Designed with minimal friction."
+            },
+            "pt": {
+                "role": "Engenheiro de Software Full Stack Sênior",
+                "hero_title": "Arquitetando plataformas de alta disponibilidade <br class='hidden md:block text-zinc-400 dark:text-[#888888]'> <span class='text-zinc-500 dark:text-[#888888]'>& soluções backend escaláveis.</span>",
+                "hero_desc": "Sou um Engenheiro Full Stack Sênior especializado em Ruby on Rails, React.js e automação CI/CD. Entrego sistemas de missão crítica com até 90% de ganho de performance.",
+                "about_title": "Sobre",
+                "about_text": "Com mais de 6 anos atuando como Engenheiro Full Stack (8 anos em TI), eu gerencio todo o Ciclo de Vida de Desenvolvimento de Software. Meu foco é gerar valor de negócio através de excelência técnica, arquitetura modular e otimização de fluxos de dados complexos. Possuo vasta experiência garantindo confiabilidade para plataformas em escala governamental.",
+                "tech_title": "Tecnologias",
+                "tech_backend": "Backend & Cloud",
+                "tech_frontend": "Frontend",
+                "tech_devops": "DevOps & Dados",
+                "career_title": "Destaques da Carreira",
+                "avia_title": "Sistema Integrado de Controle Interno (AVIA)",
+                "avia_desc": "Arquitetei o backend utilizando Ruby on Rails e Sidekiq. Reduzi os tempos de geração de relatórios e carregamento de páginas em mais de 90% (de 109s para menos de 10s) e mantive mais de 98,4% de uptime para mais de 1.000 usuários ativos diários.",
+                "infra_title": "Modernização de Infraestrutura & CI/CD",
+                "infra_desc": "Liderei a migração de sistemas (Ruby 2.7 para 3.2 e Rails 5.0 para 6.1). Também implementei pipelines de CI/CD em múltiplos estágios usando GitLab e AWS, reduzindo o tempo de configuração manual de servidores em 70%.",
+                "roi_title": "Automação de Alto ROI",
+                "roi_desc": "Desenvolvi soluções avançadas de automação que reduziram custos operacionais em 68% e tempo de execução de tarefas em 83% (reduzindo um processo de 3 minutos para menos de 30 segundos), entregando um ROI comprovado de 187%.",
+                "footer_rights": `&copy; ${currentYear} Andrew Rodrigues. Todos os direitos reservados.`,
+                "footer_source": "Código Fonte",
+                "footer_design": "Projetado com foco em performance."
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18nData[lang] && i18nData[lang][key]) {
+                    el.innerHTML = i18nData[lang][key];
+                }
+            });
+            localStorage.setItem('lang', lang);
+            
+            // Toggle active state on buttons
+            document.getElementById('btn-en').classList.toggle('opacity-50', lang !== 'en');
+            document.getElementById('btn-en').classList.toggle('font-bold', lang === 'en');
+            document.getElementById('btn-pt').classList.toggle('opacity-50', lang !== 'pt');
+            document.getElementById('btn-pt').classList.toggle('font-bold', lang === 'pt');
+        }
+
+        // Initialize language
+        const savedLang = localStorage.getItem('lang') || 'en';
+        setLanguage(savedLang);
+
+    </script>
+</body>
+</html>
